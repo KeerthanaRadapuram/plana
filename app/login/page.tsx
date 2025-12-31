@@ -21,7 +21,7 @@ export default function Login() {
     <div className="min-h-screen flex items-center justify-center p-6" style={{ backgroundColor: '#D6D2C4' }}>
       <div className="bg-white border-[6px] border-[#474A68] p-12 rounded-[60px] shadow-2xl max-w-md w-full text-center">
         <h1 className="text-5xl font-black italic mb-2" style={{ color: '#2945A8' }}>plana</h1>
-        <p className="text-[10px] font-black uppercase tracking-[0.3em] mb-10 opacity-80">Your Life OS awaits</p>
+        <p className="text-[10px] font-black uppercase tracking-[0.3em] mb-10 opacity-80" style={{ color: '#000000ff' }} >Your Life OS awaits</p>
         
         <input type="email" placeholder="Email" className="w-full p-4 mb-4 rounded-2xl border-4 border-[#444444] outline-none font-bold" value={email} onChange={e => setEmail(e.target.value)} />
         <input type="password" placeholder="Password" className="w-full p-4 mb-8 rounded-2xl border-4 border-[#444444] outline-none font-bold" value={password} onChange={e => setPassword(e.target.value)} />
