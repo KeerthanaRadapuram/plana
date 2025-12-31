@@ -21,14 +21,44 @@ export default function Login() {
     <div className="min-h-screen flex items-center justify-center p-6" style={{ backgroundColor: '#D6D2C4' }}>
       <div className="bg-white border-[6px] border-[#474A68] p-12 rounded-[60px] shadow-2xl max-w-md w-full text-center">
         <h1 className="text-5xl font-black italic mb-2" style={{ color: '#2945A8' }}>plana</h1>
-        <p className="text-[10px] font-black uppercase tracking-[0.3em] mb-10 opacity-80" style={{ color: '#000000ff' }} >Your Life OS awaits</p>
         
-        <input type="email" placeholder="Email" className="w-full p-4 mb-4 rounded-2xl border-4 border-[#444444] outline-none font-bold" value={email} onChange={e => setEmail(e.target.value)} />
-        <input type="password" placeholder="Password" className="w-full p-4 mb-8 rounded-2xl border-4 border-[#444444] outline-none font-bold" value={password} onChange={e => setPassword(e.target.value)} />
+        {/* Light black text for the subtitle */}
+        <p className="text-[10px] font-black uppercase tracking-[0.3em] mb-10 text-[#2D3436]">
+          Your Life OS awaits
+        </p>
         
-        <div className="flex flex-col gap-4">
-            <button onClick={() => handleAuth('LOGIN')} className="w-full py-4 bg-[#2945A8] text-white rounded-3xl font-black shadow-[0_6px_0_0_#2D3436] active:translate-y-1">ENTER SITE</button>
-            <button onClick={() => handleAuth('SIGNUP')} className="text-xs font-black opacity-40 hover:opacity-100 uppercase tracking-widest">Create New Account</button>
+        {/* Light black text for input typing and placeholders */}
+        <input 
+          type="email" 
+          placeholder="Email" 
+          className="w-full p-4 mb-4 rounded-2xl border-4 border-[#D6D2C4] outline-none font-bold text-[#2D3436] placeholder:text-[#2D3436]/60" 
+          value={email} 
+          onChange={e => setEmail(e.target.value)} 
+        />
+        <input 
+          type="password" 
+          placeholder="Password" 
+          className="w-full p-4 mb-8 rounded-2xl border-4 border-[#D6D2C4] outline-none font-bold text-[#2D3436] placeholder:text-[#2D3436]/60" 
+          value={password} 
+          onChange={e => setPassword(e.target.value)} 
+        />
+        
+        <div className="flex flex-col gap-6">
+            {/* Main Login Button */}
+            <button 
+              onClick={() => handleAuth('LOGIN')} 
+              className="w-full py-4 bg-[#2945A8] text-white rounded-3xl font-black shadow-[0_6px_0_0_#2D3436] active:translate-y-1 transition-all"
+            >
+              ENTER SITE
+            </button>
+
+            {/* Smaller Signup Button styled like the main button */}
+            <button 
+              onClick={() => handleAuth('SIGNUP')} 
+              className="w-2/3 mx-auto py-2 bg-[#2945A8] text-white rounded-2xl font-black text-[10px] tracking-widest shadow-[0_4px_0_0_#2D3436] active:translate-y-0.5 transition-all"
+            >
+              CREATE NEW ACCOUNT
+            </button>
         </div>
       </div>
     </div>
