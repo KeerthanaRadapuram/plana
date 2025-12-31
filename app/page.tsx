@@ -248,8 +248,8 @@ useEffect(() => {
                       onChange={async (e) => {
                         const content = e.target.value; const date = formatKey(journalDate)
                         const ex = journalEntries.find(ent => ent.date === date)
-                        if (!ex) await supabase.from('journal').insert([{date, content}])
-                        else await supabase.from('journal').update({content}).eq('id', ex.id)
+                        if (!ex) await supabase.from('journal').insert([{date, content, user_id: user.id}])
+                        else await supabase.from('journal').update({content}).eq('id', ex.id).eq('user_id', user.id)
                         fetchData()
                       }} />
                 </div>
@@ -294,7 +294,7 @@ useEffect(() => {
         {activeTab === 'Tasks' && (
           <div className="flex flex-col gap-12 animate-in slide-in-from-right duration-700">
              <div className="flex justify-between items-center text-5xl font-black italic">Tasks
-                <button onClick={async () => { const n = prompt("New Category?"); if(n) { await supabase.from('categories').insert([{name: n}]); fetchData() }}}
+                <button onClick={async () => { const n = prompt("New Category?"); if(n) { await supabase.from('categories').insert([{name: n, user_id: user.id}]); fetchData() }}}
                         className="bg-black text-white px-10 py-4 rounded-full text-xs font-black uppercase shadow-xl">New Section</button>
              </div>
              <div className="flex gap-10 overflow-x-auto pb-10 scrollbar-hide">
